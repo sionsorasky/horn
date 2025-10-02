@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ほぉーん</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+
+    .main-section {
+      background-color: #fdfdfd;
+    }
+
+    .main-text {
+      font-size: 5rem;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .sub-text {
+      font-size: 1.5rem;
+      color: #555;
+      margin-top: 1rem;
+    }
+
+    .about-section {
+      background-color: #e8f0ff;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-section p {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .haaan-section {
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .haaan-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 900px;
+      height: 600px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* モダンリンク */
+    .scroll-down {
+      margin-top: 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .scroll-down:hover {
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- メインセクション -->
+  <section class="main-section" id="home">
+    <div class="main-text">ほぉーん</div>
+    <div class="sub-text">ほぉーんへようこそ</div>
+    <a class="scroll-down" href="#about">▶ About へ進む</a>
+  </section>
+
+  <!-- Aboutセクション -->
+  <section class="about-section" id="about">
+    <h2>About ほぉーん</h2>
+    <p>数十人超が <strong>ほぉーん</strong> を使用！<br>話題沸騰中のミステリアスな言葉、それが「ほぉーん」。</p>
+    <a class="scroll-down" href="#haaan">▶ はぁーんについて</a><br>
+    <a class="scroll-down" href="#home">▲ 戻る</a>
+  </section>
+
+  <!-- はぁーんについて -->
+  <section class="haaan-section" id="haaan">
+    <h2>はぁーんについて</h2>
+    <iframe 
+      src="https://dic.nicovideo.jp/a/%E3%81%AF%E3%81%81%E3%80%9C%E3%82%93"
+      loading="lazy"
+      allowfullscreen
+    ></iframe>
+    <a class="scroll-down" href="#home">▲ ホームに戻る</a>
+  </section>
+
+  <!-- JavaScript: パスワードプロンプト -->
+  <script>
+    const password = prompt("パスワードを入力してください：");
+    if (password !== "ほぉーん") {
+      alert("パスワードが違います。アクセスできません。");
+      document.body.innerHTML = "<p style='text-align:center; margin-top: 50px;'>アクセス拒否</p>";
+    }
+  </script>
+
+</body>
+</html>
