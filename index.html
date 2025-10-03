@@ -122,6 +122,24 @@
       opacity: 1;
       pointer-events: auto;
     }
+
+    /* スタンプ用ボタン */
+    .stamp-btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: linear-gradient(135deg, #06c755, #04a044);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s, opacity 0.3s;
+    }
+
+    .stamp-btn:hover {
+      opacity: 0.85;
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
@@ -157,10 +175,13 @@
   <!-- スタンプ -->
   <section class="stamps-section" id="stamps">
     <h2>スタンプ</h2>
-    <iframe 
-      src="https://store.line.me/stickershop/product/30984898/ja?utm_source=gnsh_stickerDetail"
-      loading="lazy"
-    ></iframe>
+    <p>LINEスタンプは以下のボタンからアクセスできます。</p>
+    <a href="https://store.line.me/stickershop/product/30984898/ja?utm_source=gnsh_stickerDetail" 
+       target="_blank" 
+       class="stamp-btn">
+      ▶ スタンプを見に行く
+    </a>
+    <br><br>
     <a class="scroll-down" href="#home">▲ ホームに戻る</a>
   </section>
 
