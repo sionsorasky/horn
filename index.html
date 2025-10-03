@@ -190,9 +190,27 @@
 
   <!-- JavaScript -->
   <script>
-    // パスワード保護
+    // 許可するパスワード一覧
+    const validPasswords = [
+      "ほぉーん",
+      "ホォーン",
+      "horn",
+      "ほぉ〜ん",
+      "ホォ〜ン",
+      "はぁーん",
+      "ハァーン",
+      "harn",
+      "はぁ〜ん",
+      "ハァ〜ン",
+      "ホーン",
+      "ほーん",
+      "ハーン",
+      "はーん"
+    ];
+
     const password = prompt("パスワードを入力してください：");
-    if (password !== "ほぉーん") {
+
+    if (!validPasswords.includes(password)) {
       alert("パスワードが違います。アクセスできません。");
       document.body.innerHTML = "<p style='text-align:center; margin-top: 50px;'>アクセス拒否</p>";
     }
