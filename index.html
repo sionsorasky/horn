@@ -63,6 +63,16 @@
       margin-bottom: 1rem;
     }
 
+    .stamps-section {
+      background-color: #fff8f0;
+      text-align: center;
+    }
+
+    .stamps-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
     iframe {
       width: 100%;
       max-width: 900px;
@@ -86,6 +96,32 @@
     .scroll-down:hover {
       opacity: 0.6;
     }
+
+    /* 上へ戻るボタン */
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(0,0,0,0.6);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 999;
+    }
+
+    #back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
   </style>
 </head>
 <body>
@@ -102,6 +138,7 @@
     <h2>About ほぉーん</h2>
     <p>数十人超が <strong>ほぉーん</strong> を使用！<br>話題沸騰中のミステリアスな言葉、それが「ほぉーん」。</p>
     <a class="scroll-down" href="#haaan">▶ はぁーんについて</a><br>
+    <a class="scroll-down" href="#stamps">▶ スタンプ</a><br>
     <a class="scroll-down" href="#home">▲ 戻る</a>
   </section>
 
@@ -113,16 +150,45 @@
       loading="lazy"
       allowfullscreen
     ></iframe>
+    <a class="scroll-down" href="#stamps">▶ スタンプ</a><br>
     <a class="scroll-down" href="#home">▲ ホームに戻る</a>
   </section>
 
-  <!-- JavaScript: パスワードプロンプト -->
+  <!-- スタンプ -->
+  <section class="stamps-section" id="stamps">
+    <h2>スタンプ</h2>
+    <iframe 
+      src="https://store.line.me/stickershop/product/30984898/ja?utm_source=gnsh_stickerDetail"
+      loading="lazy"
+    ></iframe>
+    <a class="scroll-down" href="#home">▲ ホームに戻る</a>
+  </section>
+
+  <!-- 上へ戻るボタン -->
+  <div id="back-to-top">▲</div>
+
+  <!-- JavaScript -->
   <script>
+    // パスワード保護
     const password = prompt("パスワードを入力してください：");
     if (password !== "ほぉーん") {
       alert("パスワードが違います。アクセスできません。");
       document.body.innerHTML = "<p style='text-align:center; margin-top: 50px;'>アクセス拒否</p>";
     }
+
+    // 上へ戻るボタン制御
+    const backToTop = document.getElementById("back-to-top");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   </script>
 
 </body>
